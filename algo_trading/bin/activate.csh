@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/home/mmcrjx/Documents/Financials/Earn/Stocks/algo_trading/algo_trading"
+setenv VIRTUAL_ENV "/home/mainak/Documents/Financials/Earn/Stocks/algo_trading1/algo_trading"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
@@ -17,19 +17,7 @@ setenv PATH "$VIRTUAL_ENV/bin:$PATH"
 set _OLD_VIRTUAL_PROMPT="$prompt"
 
 if (! "$?VIRTUAL_ENV_DISABLE_PROMPT") then
-    if ("algo_trading" != "") then
-        set env_name = "algo_trading"
-    else
-        if (`basename "VIRTUAL_ENV"` == "__") then
-            # special case for Aspen magic directories
-            # see https://aspen.io/
-            set env_name = `basename \`dirname "$VIRTUAL_ENV"\``
-        else
-            set env_name = `basename "$VIRTUAL_ENV"`
-        endif
-    endif
-    set prompt = "[$env_name] $prompt"
-    unset env_name
+    set prompt = "(algo_trading) $prompt"
 endif
 
 alias pydoc python -m pydoc
