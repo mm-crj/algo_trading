@@ -6,7 +6,7 @@ def main():
     db_config = {
         'dbname' : 'trading_data',
         'user': 'postgres',
-        'password': 'tudiwr22',
+        'password': '*****',
             'host': 'localhost',
             'port': '5432'
     }
