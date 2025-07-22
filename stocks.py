@@ -19,11 +19,11 @@ plt.style.use('fivethirtyeight')
 from  strategy import get_macd,implement_macd_strategy
 from  plots import plot_macd
 # the number in months that we want the historical data for.
-n = 12
-# fast slow and signal times in months
-fast = 12 
-slow = 26
-signal = 9
+n = 24
+# fast slow and signal times in days
+fast = 182 
+slow = 365
+signal = 243
 
 # Set the start and end date
 start_date = date.today() + relativedelta(months=-n)
@@ -33,13 +33,13 @@ end_date = date.today()
 # ticker = 'AMZN'
 # ticker = 'AAPL'
 # ticker = 'AMD'
-ticker = 'NVDA'
+# ticker = 'NVDA'
 # ticker = 'NET'
-# ticker = 'TSLA'
+ticker = 'TSLA'
 # ticker = 'GOOGL'
 # ticker = 'SXR8.DE'
 # ticker = 'MSFT'
-ticker = 'EUNL.DE'
+# ticker = 'EUNL.DE'
 # Get the data
 data = yf.download(ticker, start_date, end_date)
 
@@ -121,11 +121,11 @@ buy_price, sell_price, macd_signal = implement_macd_strategy(data['Close'], goog
 ax1 = plt.subplot2grid((8,1), (0,0), rowspan = 5, colspan = 1)
 ax2 = plt.subplot2grid((8,1), (5,0), rowspan = 3, colspan = 1)
 
-ax1.plot(data['Close'], color = 'skyblue', linewidth = 2, label = 'GOOGL')
+ax1.plot(data['Close'], color = 'skyblue', linewidth = 2, label = ticker)
 ax1.plot(data.index, buy_price, marker = '^', color = 'green', markersize = 10, label = 'BUY SIGNAL', linewidth = 0)
 ax1.plot(data.index, sell_price, marker = 'v', color = 'r', markersize = 10, label = 'SELL SIGNAL', linewidth = 0)
 ax1.legend()
-ax1.set_title('GOOGL MACD SIGNALS')
+ax1.set_title('{} MACD SIGNALS'.format(ticker))
 ax2.plot(googl_macd['macd'], color = 'grey', linewidth = 1.5, label = 'MACD')
 ax2.plot(googl_macd['signal'], color = 'skyblue', linewidth = 1.5, label = 'SIGNAL')
 
@@ -195,7 +195,7 @@ for i in range(len(macd_strategy_ret_df['macd_returns'])):
 macd_investment_ret_df = pd.DataFrame(macd_investment_ret).rename(columns = {0:'investment_returns'})
 total_investment_ret = round(sum(macd_investment_ret_df['investment_returns']), 2)
 profit_percentage = floor((total_investment_ret/investment_value)*100)
-print(cl('Profit gained from the MACD strategy by investing $100k in {0} : {1}'.format(ticker,total_investment_ret), attrs = ['bold']))
+print(cl('Profit gained from the MACD strategy by investing ${0} in {1} : {2}'.format(investment_value,ticker,total_investment_ret), attrs = ['bold']))
 print(cl('Profit percentage of the MACD strategy : {}%'.format(profit_percentage), attrs = ['bold']))
 
 
