@@ -32,6 +32,7 @@ Databases to be used for storing data. Preferably PostgreSQL.
 - [ ] understand what does the `span` attribute means in `pd.ewm()`.
 - [ ] Use a optimizer to find the optimal `fast` and `slow` periods. The cost is the percentage of profit.
 - [ ] Some way to get an email when its time to buy or sell.
+- [ ] Figure out a way to hide database credentials(Env variables?).
 
 
 When the fast average is more than the slow average, then it means that the price has moved up significantly in the near term so its time to sell. Where as if the fast average is lagging behind the slow average then it means in the last few days or weeks the price has dropped significantly hence its a good time to buy.
