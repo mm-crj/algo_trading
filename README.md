@@ -4,21 +4,22 @@ A Portfolio repo to showcase implementation and back testing of quantitative str
 ### Design
 New Folder structure
 ```
-+--/DataGathering
-    - data_fetcher.py
-/Strategies
-    - strategy_base.py
-    - market_making_strategy.py
-/Backtesting
-    - backtester.py
-/Visualization
-    - visualizer.py
-/Execution (C++)
-    - ExecutionEngine.h
-    - ExecutionEngine.cpp
-/Main
-    - main.py
-- requirements.txt
+.
+├── DataGathering
+│   └── data_fetcher.py
+├── Strategies
+│   ├── market_making_strategy.py
+│   └── strategy_base.py
+├── Backtesting
+│   └── backtester.py
+├── Visualization
+│   └── visualizer.py
+├── Execution (C++)
+│   ├── ExecutionEngine.cpp
+│   └── ExecutionEngine.h
+├── Main
+│   └── main.py
+└── requirements.txt
 ```
 Databases to be used for storing data. Preferably PostgreSQL.
 
