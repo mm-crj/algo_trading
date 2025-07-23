@@ -21,15 +21,17 @@ New Folder structure
 │   └── main.py
 └── requirements.txt
 ```
-Currently working on the data_fetcher part, the data has to be featched using
-`yfinance` and stored in a `postgresql` database.
+Currently working on the data_fetcher part, the data has to be fetched using
+`yfinance` and stored in a `PostgreSQL` database.
 
 <!--### Resourses
  1. [Link](https://medium.com/codex/algorithmic-trading-with-macd-in-python-1c2769a6ad1b) to Blog article for implementing the MADC algorithm based on exponential averages.-->
 
 
 ### To-Do list
-- [ ] Figure out a way to secure database credentials(ini files).
+- [x] Figure out a way to secure database credentials(ini files).
+- [x] Fetch and conform data
+- [ ] Store data in `PostgreSQL` database
 - [x] MADC implementing with Backtesting on the same data.
 - [ ] understand what does the `span` attribute means in `pd.ewm()`.
 - [ ] Use a optimizer to find the optimal `fast` and `slow` periods. The cost is the percentage of profit.
