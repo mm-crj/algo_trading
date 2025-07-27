@@ -1,4 +1,7 @@
-/algo_trading/
-/__pycache__/
-/pics/
-/Main/config.ini
+algo_trading/
+__pycache__/
+pics/
+Main/__pycache__/
+config.ini
+Main/config.py
+*.pyc
