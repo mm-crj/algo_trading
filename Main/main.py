@@ -1,32 +1,16 @@
-# from config import config
-from configparser import ConfigParser
-import psycopg2
 import importlib
-from DataGathering.data_fetcher import DataFetcher
+from configparser import ConfigParser
+
+import psycopg2
+
 import DataGathering.data_fetcher
+from DataGathering.data_fetcher import DataFetcher
+
 importlib.reload(DataGathering.data_fetcher)
 
 
 def main():
-    """connecting to PostgreSQL database server"""
-    # conn = None
-    # params = None
-    # try:
-    #     params = config()
-    #     print('connecting to the PostgreSQL server')
-    #     conn = psycopg2.connect(**params)
-    #     cur = conn.cursor()
-    #     print('PostgreSQL database version:')
-    #     cur.execute('SELECT version()')
-    #     db_version = cur.getchone()
-    #     print(db_version)
-    #     cur.close()
-    # except (Exception, psycopg2.DatabaseError) as error:
-    #     print(error)
-    # finally:
-    #     if conn is not None:
-    #         conn.close()
-    #         print('Database connection closed.')
+   ''''connecting to PostgreSQL database server'''
     parser = ConfigParser()
     parser.read("config.ini")
 
@@ -46,5 +30,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
